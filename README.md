@@ -4,6 +4,11 @@
 
 - 增加shell mock
 - 增加手工测试
+- 增加--clean参数自动清理日志
+- 支持单个串行suite的报告
+- todo: mock日志
+- session控制日志
+- todo: 用例位置提示
 
 ### 0.1.5版本
 
