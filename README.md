@@ -1,5 +1,15 @@
 ## changelog
 
+### 0.2.11
+- 解决 mock bug：配置为 null 后无法返回到真实机器
+- index precondition 可配合使用
+- 解决 shell mock ， 串口mock bug
+- 实现 import 操作
+- 实现 if, elif, else
+- 实现 __init__.yaml 文件配置及解析
+
+ 
+
 ### 0.2.8
 
 - 手工测试可以跟其他测试并行，如果输出消息太多，可以通过回车来重新获得手工测试的输入提示
