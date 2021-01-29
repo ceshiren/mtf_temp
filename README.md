@@ -1,6 +1,7 @@
 ## changelog
 
 ### 0.2.11
+<<<<<<< HEAD
 - 解决 mock bug：配置为 null 后无法返回到真实机器
 - index precondition 可配合使用
 - 解决 shell mock ， 串口mock bug
@@ -9,6 +10,12 @@
 - 实现 __init__.yaml 文件配置及解析
 
  
+=======
+
+- broken结果优化展示
+- 手工测试结果输入错误重试
+- 增加__init__.yaml支持
+>>>>>>> 284825ab58515b08418e2b96f047a5d652875177
 
 ### 0.2.8
 
