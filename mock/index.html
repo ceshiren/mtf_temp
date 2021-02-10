@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mock" class="md-skip">
+        <a href="#mock-server" class="md-skip">
           Skip to content
         </a>
       
@@ -199,7 +199,7 @@
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Quick Start
+        MTF测试框架
       </a>
     </li>
   
@@ -214,7 +214,67 @@
   
     <li class="md-nav__item">
       <a href="../feature/" class="md-nav__link">
-        MTF测试框架
+        特性介绍
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testcase/" class="md-nav__link">
+        测试用例编写
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../suites/" class="md-nav__link">
+        测试套件编排
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../runner/" class="md-nav__link">
+        运行
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parallel/" class="md-nav__link">
+        parallel原理
       </a>
     </li>
   
@@ -255,8 +315,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mock" class="md-nav__link">
-    mock框架
+  <a href="#mock-server" class="md-nav__link">
+    mock server设计
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-mock" class="md-nav__link">
+    http mock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-mock" class="md-nav__link">
+    tcp mock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mock-server_1" class="md-nav__link">
+    mock server启动的完整参数
   </a>
   
 </li>
@@ -279,36 +360,6 @@
     <li class="md-nav__item">
       <a href="../hook/" class="md-nav__link">
         Hook
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../parallel/" class="md-nav__link">
-        parallel原理
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mkdocs/" class="md-nav__link">
-        Welcome to MkDocs
       </a>
     </li>
   
@@ -337,8 +388,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#mock" class="md-nav__link">
-    mock框架
+  <a href="#mock-server" class="md-nav__link">
+    mock server设计
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-mock" class="md-nav__link">
+    http mock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-mock" class="md-nav__link">
+    tcp mock
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mock-server_1" class="md-nav__link">
+    mock server启动的完整参数
   </a>
   
 </li>
@@ -362,7 +434,55 @@
                 
                   <h1>Mock</h1>
                 
-                <h2 id="mock">mock框架</h2>
+                <h2 id="mock-server">mock server设计</h2>
+<p>mock server主要由如下概念组成</p>
+<ul>
+<li>代理端口 port_listen：用于获得请求并转发</li>
+<li>管理端口 port_admin：提供http接口对代理行为进行控制</li>
+<li>转发地址 forward_host forward_port：代理指向的转发地址，用于转发请求并获取响应</li>
+<li>协议 protocol：代理所支持的协议类型，json、tcp、shell等，shell mock本身是用json协议实现的。</li>
+</ul>
+<p>设计理念与google的一篇文章比较巧合，思路可参考 https://ceshiren.com/t/topic/9052</p>
+<h2 id="http-mock">http mock</h2>
+<p>开启mock server，并设置为支持http的json格式</p>
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">csrmock.core.mock_client.MockClient.start_mock_server</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> protocol</span><span class="p">:</span> <span class="nv">json</span> <span class="p p-Indicator">}</span>
+  <span class="p p-Indicator">-</span> <span class="nt">save</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">client</span>
+</code></pre></div>
+<p>完整mock用例，支持jsonpath表达式与普通的kv表达式</p>
+<div class="highlight"><pre><span></span><code><span class="nt">test_json_mock</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">csrmock.core.mock_client.MockClient.start_mock_server</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> protocol</span><span class="p">:</span> <span class="nv">json</span> <span class="p p-Indicator">}</span>
+  <span class="p p-Indicator">-</span> <span class="nt">save</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">client</span>
+  <span class="p p-Indicator">-</span> <span class="nt">client.mock</span><span class="p">:</span>
+      <span class="nt">req</span><span class="p">:</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">GET</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/1</span>
+      <span class="nt">res</span><span class="p">:</span>
+        <span class="nt">errcode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+        <span class="nt">msg</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+
+  <span class="p p-Indicator">-</span> <span class="nt">client.mock</span><span class="p">:</span>
+      <span class="nt">req</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$..[?(@.method==&quot;GET&quot; and @.path==&#39;/2&#39;)]</span>
+      <span class="nt">res</span><span class="p">:</span>
+        <span class="nt">errcode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+        <span class="nt">msg</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<h2 id="tcp-mock">tcp mock</h2>
+<div class="highlight"><pre><span></span><code><span class="nt">test_tcp_mock</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">csrmock.core.mock_client.MockClient.start_mock_server</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="nt"> protocol</span><span class="p">:</span> <span class="nv">tcp</span> <span class="p p-Indicator">}</span>
+  <span class="p p-Indicator">-</span> <span class="nt">save</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">client</span>
+  <span class="p p-Indicator">-</span> <span class="nt">client.mock</span><span class="p">:</span>
+      <span class="nt">req</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python:req[&#39;f1&#39;]==b&#39;1&#39;</span>
+      <span class="c1">#req: python:&#39;abc&#39; in req  ==&gt; True</span>
+      <span class="nt">res</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python:res=res[0:3]+b&quot;yaml tcp core demo&quot;+res[3:]</span>
+</code></pre></div>
+<h2 id="mock-server_1">mock server启动的完整参数</h2>
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">csrmock.core.mock_client.MockClient.start_mock_server</span><span class="p">:</span>
+      <span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+      <span class="nt">port_admin</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8009</span>
+      <span class="nt">port_listen</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8005</span>
+      <span class="nt">forward_host</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+      <span class="nt">forward_port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8010</span>
+</code></pre></div>
                 
               
               
@@ -381,7 +501,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../feature/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../parallel/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -390,7 +510,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                MTF测试框架
+                parallel原理
               </div>
             </div>
           </a>

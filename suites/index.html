@@ -16,7 +16,7 @@
     
     
       
-        <title>Hook - MTF测试框架</title>
+        <title>测试套件编排 - MTF测试框架</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jvm-hook" class="md-skip">
+        <a href="#_1" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Hook
+              测试套件编排
             
           </span>
         </div>
@@ -241,11 +241,76 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../suites/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          测试套件编排
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         测试套件编排
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#suites" class="md-nav__link">
+    suites配置说明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suites_1" class="md-nav__link">
+    suites的属性配置
+  </a>
+  
+    <nav class="md-nav" aria-label="suites的属性配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setupclass" class="md-nav__link">
+    setupClass
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inityaml" class="md-nav__link">
+    init.yaml配置
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -301,52 +366,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Hook
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../hook/" class="md-nav__link">
         Hook
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#jvm-hook" class="md-nav__link">
-    jvm hook技术
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    相关链接
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -366,6 +390,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -374,15 +400,35 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#jvm-hook" class="md-nav__link">
-    jvm hook技术
+  <a href="#suites" class="md-nav__link">
+    suites配置说明
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    相关链接
+  <a href="#suites_1" class="md-nav__link">
+    suites的属性配置
+  </a>
+  
+    <nav class="md-nav" aria-label="suites的属性配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setupclass" class="md-nav__link">
+    setupClass
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inityaml" class="md-nav__link">
+    init.yaml配置
   </a>
   
 </li>
@@ -399,20 +445,63 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ceshiren/mtf_temp/edit/master/docs/hook.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ceshiren/mtf_temp/edit/master/docs/suites.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Hook</h1>
-                
-                <h2 id="jvm-hook">jvm hook技术</h2>
-<p>思路仍然来自于google的一篇文章 <a href="https://ceshiren.com/t/topic/9052">Fixing a Test Hourglass</a> 。
-目前使用阿里巴巴的jvm-sandbox实现，通过jvm进程进行动态插入字节码实现对行为的修改。</p>
-<h2 id="_1">相关链接</h2>
+                <h1 id="_1">测试套件编排</h1>
+<h2 id="suites">suites配置说明</h2>
+<div class="highlight"><pre><span></span><code><span class="nt">suites</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">suiteName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">套件名字</span>
+    <span class="nt">suiteId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">套件id</span>
+    <span class="nt">children</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">suiteName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">子套件名字</span>
+        <span class="nt">suiteId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">子套件id</span>
+        <span class="nt">testcaseIds</span><span class="p">:</span>
+          <span class="c1"># 执行文件内所有用例</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scriptNameA</span>
+          <span class="c1">#执行特定文件里的单个用例</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scriptNameA::test_a</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scriptNameA::test_b</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scriptNameA::test_c</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">scriptNameB::test_a</span>
+          <span class="c1">#限定目录下的用例</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dirname2.scriptNameB::test_a</span>
+          <span class="c1">#执行手工测试</span>
+          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">dirname1.manual_script::test_1</span>
+
+
+<span class="nt">config</span><span class="p">:</span>
+  <span class="nt">server</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">20001</span>
+  <span class="nt">include</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">一级套件</span>
+  <span class="nt">exclude</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">不应该展示</span>
+  <span class="nt">parallel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+</code></pre></div>
+<h2 id="suites_1">suites的属性配置</h2>
+<h3 id="setupclass">setupClass</h3>
+<p>在分析完所有测试用例后、套件执行之前执行的一段逻辑</p>
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">suiteName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">并行示例2</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="nt">setupClass</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">wait_to</span><span class="p">:</span> <span class="s">&#39;2020-12-18</span><span class="nv"> </span><span class="s">17:40:00&#39;</span>
+    <span class="nt">testcaseIds</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">::test_parallel_2</span>
+</code></pre></div>
+<p>支持的关键字如下</p>
 <ul>
-<li><a href="https://github.com/alibaba/jvm-sandbox">jvm-sandbox</a></li>
+<li>sleep: 5</li>
+<li>wait_to: '2020-12-18 17:40:00'</li>
 </ul>
+<h2 id="inityaml"><strong>init</strong>.yaml配置</h2>
+<p>有些特殊的动态数据源的参数化数据用例需要提前下载一些数据，然后再根据数据生成参数化用例。 这部分的前置操作需要在用例收集之前就开始执行，这部分的逻辑需要放到__init__.yaml中。 在需要提前执行的目录下，存放一个__init__
+.yaml文件，里面按照正常的测试用例编写你想要的执行过程即可。</p>
+<div class="highlight"><pre><span></span><code><span class="nt">test_init_1</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">log</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run before all the testcase</span>
+
+<span class="nt">test_init_2</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">log</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">run after test_init_2</span>
+</code></pre></div>
                 
               
               
@@ -431,7 +520,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../mock/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../testcase/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -440,11 +529,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Mock
+                测试用例编写
               </div>
             </div>
           </a>
         
+        
+          <a href="../runner/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                运行
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
