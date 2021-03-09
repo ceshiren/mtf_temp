@@ -1,4 +1,6 @@
 ## changelog
+### 0.2.14
+- include 和 exclude 支持 list 传参。使用方法详见 mtf/docs/parallel.md
 
 ### 0.2.13
 - 解决 shell mock 无设备 bug
