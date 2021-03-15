@@ -1,4 +1,7 @@
 ## changelog
+### 0.2.15
+- 修复 shell 客户端无法传参问题
+
 ### 0.2.14
 - include 和 exclude 支持 list 传参。使用方法详见 mtf/docs/parallel.md
 
